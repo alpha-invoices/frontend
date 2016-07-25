@@ -2,19 +2,59 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>Register account</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript">
+
+function send(){
+
+    var email = document.getElementById("email").value;
+	var password = document.getElementById("password").value;
+
+    $.ajax({
+        url: "http://localhost:8080/register",
+        type: "POST",
+        data:  { JSON.stringify(email, password) },
+        dataType: 'json',
+		contentType: "application/json; charset=utf-8",
+        success: function (result) {
+            switch (result) {
+                case true:
+                    processResponse(result);
+                    break;
+                default:
+                    resultDiv.html(result);
+            }
+        },
+        error: function (xhr, ajaxOptions, thrownError) {
+        alert(xhr.status);
+        alert(thrownError);
+        }
+    });
+};
+
+</script>
 </head>
 <body>
-	<form>
-		<input type="email" required>E-mail
+
+
+
+	<form method="post" action="" name="regform" id="regform" onsubmit="send()">
+		<input name="email" type="email" id="email" required>E-mail
 		</input>
 		<br>
-		<br>
-		<input type="password" required>Password
+		<input name=-"password" type="password" id="password" required>Password
 		</input><br>
 		<input type="submit" value="Register"></input>
+		
 	</form>
+	
 	<br>
 	Already have an account? <a href="login.html">Login</a>
+
+	
+
 </body>
 </html>
