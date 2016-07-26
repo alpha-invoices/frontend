@@ -21,15 +21,20 @@ function register(){
 		$("#error").text('Fill out all fields!');
 		return;
 	}
+	if (password === confirmPassword) {
+		if(!validateEmail(email)){
+			$("#error").text('Invalid email!');
+			return;
+		}
 	
-	if(!validateEmail(email)){
-		$("#error").text('Invalid email!');
-		return;
+		if(!validatePassword(password)){
+			$("#error").text('Invalid password! A valid password must be in the range of 8 to 20 characters, must start with lower case letter, must contain at least one of te following: upper case letter; lower case letter, digit and special symbol (@#$%^&+=).');
+			return;
+		}
 	}
-	
-	if(!validatePassword(password)){
-		$("#error").text('Invalid password! A valid password must be in the range of 8 to 20 characters, must start with lower case letter, must contain at least one of te following: upper case letter; lower case letter, digit and special symbol (@#$%^&+=).');
-		return;
+	else {
+		$("#error").text('The two passwords must match!');
+		return
 	}
 	
     $.ajax({
