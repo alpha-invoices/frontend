@@ -3,19 +3,32 @@
 <head>
 <meta charset="UTF-8">
 <title>Login</title>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+<script type="text/javascript" src="/src/register.js"></script>
+
+<link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css"></link>
+
+<script type="text/javascript" src="/node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </head>
 <body>
-	<form method="post" onsubmit="/">
-		<input type="email" required>E-mail
-		</input>
-		<br>
-		<input type="password" required>Password
-		</input><br>
-		<input type="submit" value="Login"></input>
-	</form>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-4" style="background-color:lavenderblush;"></div>
+	  <div class="col-sm-4" style="background-color:lavender;">
+	      <form  role="form" action="#" name="logform" id="logform">
+		    <div class="form-group">
+				<label for="email">Email address:</label>
+				<input class="form-control" name="email" type="email" id="email" ></input>
+			</div>
+			<div class="form-group">
+				<label for="pwd">Password:</label>
+				<input class="form-control" name=-"password" type="password" id="password" ></input>
+			</div>
+			<input class="btn btn-primary" type="button" value="Login" name="Login" onclick="login()"></input>
+	      </form>
 	<br>
 	Don't have an account? <a href="register.html">Register</a>
-	
 	
 </body>
 </html>
