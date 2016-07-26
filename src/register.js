@@ -11,9 +11,16 @@ function register(){
 
     var email = document.getElementById("email").value;
 	var password = document.getElementById("password").value;
+	var confirmPassword = document.getElementById("confirmPassword").value;
 	
 	$("#error").text('');
 	$("#successfulRegistration").text('');
+	
+	//Checks all fields are filled.
+	if(!email || !password || !confirmPassword){
+		$("#error").text('Fill out all fields!');
+		return;
+	}
 	
 	if(!validateEmail(email)){
 		$("#error").text('Invalid email!');
