@@ -26,7 +26,7 @@ function register(){
 	}
 	
     $.ajax({
-        url: "http://localhost:8080/register",
+        url: "http://10.32.23.129:8080/register",
         type: "POST",
         data:  JSON.stringify({ "email": email, "password": password }),
         dataType: 'json',
