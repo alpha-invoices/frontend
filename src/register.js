@@ -3,6 +3,9 @@ function register(){
     var email = document.getElementById("email").value;
 	var password = document.getElementById("password").value;
 	
+	$("#error").text('');
+	$("#successfulRegistration").text('');
+	
 	if(!validateEmail(email)){
 		$("#error").text('Invalid email!');
 		return;
