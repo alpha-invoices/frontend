@@ -12,7 +12,7 @@
 	<script>
 
 		$(function(){
-			$("#targetUser").load("user.html", function(template) {
+			$("#targetUser").load("user-info.html", function(template) {
 				//var template = $("#userInfo").html();
 				var user = {
 					name: "Иван-ООД",
@@ -38,7 +38,7 @@
 				var rendered = Mustache.render(template, user);
 				$('#targetContragent').html(rendered);
 			});
-			$("#targetContent").load("content.html", function(template) {
+			$("#targetContent").load("item-list.html", function(template) {
 				// var template = $("#content").html();
 				var items = {
 					date: new Date().toLocaleString(),		
@@ -63,7 +63,7 @@
 					$('#targetContent').html(rendered);
 				});
 
-			$("#targetSum").load("sum.html", function(template) {
+			$("#targetSum").load("sum-info.html", function(template) {
 				//var template = $("#sum").html();
 				var checkout = {
 					sumWithoutVat: 80,
