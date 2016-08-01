@@ -1,0 +1,24 @@
+﻿<div id="item-list">
+	<p id="invoiceNumber" class="header-field"><strong>Фактура номер: {{ number }} </strong></p>
+	<p id="date" class="header-field">Дата на издаване: {{ date }} </p>
+	<br/>
+	<hr>
+	<table id="itemsList" class="items-table">
+	  <tr>
+		<td id="nameOfSubject"><strong>Наименование на стока</strong></td>
+		<td id="quantityOfSubject"><strong>Количество</strong></td>
+		<td id="priceOfSubject"><strong>Един. цена</strong></td>
+		<td id="sumPriceOfSubject"><strong>Стойност</strong></td>
+	  </tr>
+	  {{#items}}
+	  <tr class="item">
+		<td id="nameOfSubject">{{name}}</td>
+		<td id="quantityOfSubject">{{quantity}}</td>
+		<td id="priceOfSubject">{{price}}</td>
+		<td id="sumPriceOfSubject">{{sum}}</td>
+	  </tr>
+	  {{/items}}
+
+	</table>
+	<hr>
+  </div>

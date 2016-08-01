@@ -1,0 +1,52 @@
+
+        body {
+          font-family: Tahoma, Arial, Helvetica, sans-serif;
+          width: 50%;
+          height: 100%;
+        }
+
+        img {
+          border:0;
+        }
+
+        #page {
+          width:800px;
+          margin:0 auto;
+          padding:15px;
+        }
+
+        .header {
+          height:200px;
+          width: 900px;
+          padding-left: 80px;
+          display: table-cell;
+        }
+
+        .footer {
+          text-align: right;
+          position: relativ;e
+        }
+
+        .header-field {
+          margin-top: 5px;
+          margin-bottom: 5px;
+        }
+        .footer-sum {
+          text-align: right;
+          margin-right: 14%;
+        }
+
+        table.items-table {
+          width:100%;
+        }
+
+        table.items-table td {
+          padding:5px;
+        }
+
+        table.items-table tr:nth-child(even){background-color: #e1ffe1}
+
+        .footer-data {
+          padding-left: 1em;
+          display: table-cell;
+        }

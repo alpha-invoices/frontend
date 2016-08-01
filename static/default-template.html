@@ -1,0 +1,93 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+	<meta charset="UTF-8">
+	<title>Default Template</title>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+	<script type="text/javascript" src="../node_modules/mustache/mustache.js"></script>  
+
+	<link rel="stylesheet" type="text/css" href="css/default-template-css.css" />
+	
+	<script>
+
+		$(function(){
+			$("#targetUser").load("user.html", function(template) {
+				//var template = $("#userInfo").html();
+				var user = {
+					name: "Иван-ООД",
+					address: "София",
+					eik: "0123456789",
+					zdds: "0123456789",
+					mol: "0123456789"
+				};
+				var rendered = Mustache.render(template, user);
+				$('#targetUser').html(rendered);
+			});
+
+			$("#targetContragent").load("contragent.html", function(template) {
+				//var template = $("#partnerInfo").html();
+				var user = {
+					name: "Петър-КОМЕРС",
+					address: "Хасково",
+					eik: "9876543210",
+					zdds: "9876543210",
+					mol: "9876543210"
+
+				};
+				var rendered = Mustache.render(template, user);
+				$('#targetContragent').html(rendered);
+			});
+			$("#targetContent").load("content.html", function(template) {
+				// var template = $("#content").html();
+				var items = {
+					date: new Date().toLocaleString(),		
+					number: 2400000000,
+					items:[{ 
+						name: "Чушка",
+						quantity: 20,
+						price: 4,
+						sum: 80 }, { 
+						name: "Картоф",
+						quantity: 20,
+						price: 4,
+						sum: 80  },
+						{ 
+						name: "Домат",
+						quantity: 20,
+						price: 4,
+						sum: 80  }]						
+					};
+					var rendered = Mustache.render(template, items);
+					console.log(rendered);
+					$('#targetContent').html(rendered);
+				});
+
+			$("#targetSum").load("sum.html", function(template) {
+				//var template = $("#sum").html();
+				var checkout = {
+					sumWithoutVat: 80,
+					sumWithVat: 96
+
+				};
+				var rendered = Mustache.render(template, checkout);
+				console.log(rendered);
+				$('#targetSum').html(rendered);
+			});
+		});
+
+	</script>
+
+
+</head>
+<body> 
+	<div id="targetUser" class="header">
+	</div>
+	<div id="targetContragent" class="header">
+	</div>
+	<div id="targetContent">
+	</div>
+	<div id="targetSum">
+	</div>
+</body> 
+</html>
