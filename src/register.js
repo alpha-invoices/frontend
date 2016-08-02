@@ -70,6 +70,6 @@ function validateEmail(email) {
  * upper case letter; lower case letter, digit and special symbol (@#$%^&+=)
  */
 function validatePassword(password){
-	var regex = /^[a-z](?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{7,19}$/;
+	var regex = /^[a-z](?=.*[0-9])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\S+$).{7,19}$/;
 	return regex.test(password);
 }
