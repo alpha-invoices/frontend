@@ -66,10 +66,10 @@ function validateEmail(email) {
  * Validates a password according to the rules set by the REST application. In order to be considered valid a password must:
  * - be in the range of 8 to 20 characters
  * - start with lower case letter
- * - ontain at least one of te following: 
+ * - contain at least one of the following: 
  * upper case letter; lower case letter, digit and special symbol (@#$%^&+=)
  */
 function validatePassword(password){
-	var regex = /^[a-z](?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\S+$).{7,19}$/;
+	var regex = '^[a-z](?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\S+$).{7,19}$';
 	return regex.test(password);
 }
